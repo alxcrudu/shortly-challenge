@@ -1,0 +1,94 @@
+@import "variables.scss";
+
+.container {
+  --max-width: 1440px;
+  --padding: 2em;
+
+  width: min(var(--max-width), 100% - var(--padding));
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+// If you hide an element with display: none, it can also hide it from assistive technology, such as screen readers.
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+:where(.flow :not(:first-child)) {
+  margin-top: var(--spacing, 1em);
+}
+
+.main-heading {
+  font-size: $main-heading;
+  color: $very-dark-violet;
+}
+
+.secondary-heading {
+  font-size: $secondary-heading;
+  color: $dark-blue;
+}
+
+.h3-heading {
+  font-size: $h3-heading;
+  color: $dark-blue;
+}
+
+.copy {
+  font-size: $p;
+  color: $grayish-violet;
+}
+
+.fw-500 {
+  font-weight: $fw-500;
+}
+
+.fw-700 {
+  font-weight: $fw-700;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+.center-basic {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.two-columns {
+  display: grid;
+  gap: 1em;
+}
+
+@media (min-width: 50em) {
+  .two-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+.padding-block-bg {
+  padding: 2rem;
+}
+.padding-block-sm {
+  padding: 1rem;
+}
+
+.section-spacing {
+  margin-top: 5em;
+}
