@@ -86,10 +86,13 @@ a {
       border-bottom: 1px solid $grayish-violet;
       display: flex;
       flex-direction: column;
-      gap: 1em;
+      // gap: 1em;
       margin: 0;
       padding: 0 0 2em 0;
       text-align: center;
+    }
+    ul > * + * {
+      margin-top: 1em;
     }
   }
   .user-container {
@@ -153,6 +156,9 @@ a {
     margin-top: 4em;
   }
 }
+.landing-copy {
+  width: 100%;
+}
 
 .center-align {
   align-self: center;
@@ -205,7 +211,8 @@ a {
     padding: 1rem 1.5rem;
   }
   .button {
-    border-radius: 0.5em;
+    border-radius: 0.5em !important;
+    min-width: fit-content;
   }
 }
 
@@ -230,6 +237,9 @@ a {
 @media (max-width: 50em) {
   .grey-underlay {
     top: 6em;
+  }
+  .text-area {
+    text-align: center;
   }
 }
 
@@ -316,12 +326,32 @@ a {
   border-radius: 100vmax;
   background-color: $dark-violet;
   padding: 1em;
-  width: fit-content;
+  position: absolute;
+  // padding: 0 !important;
+  top: -2.3em;
+  // height: fit-content;
+  // width: fit-content;
 }
 .features {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4em;
+}
+.feature {
+  border-radius: 0.5em;
+  height: min-content;
+  background: #fff;
+  position: relative;
+  padding: 2em 1em 2em 1em !important;
+  .circle {
+    img {
+      display: block;
+      min-width: 40px;
+      min-height: 40px;
+      width: 40px;
+      height: auto;
+    }
+  }
 }
 
 @media (min-width: 60em) {
@@ -349,23 +379,6 @@ a {
     text-align: center;
     flex-direction: column;
     align-items: center;
-  }
-}
-.feature {
-  background: #fff;
-  border-radius: 0.5em;
-  // border: solid 1px red;
-  height: min-content;
-  position: relative;
-  padding: 2em 1em 2em 1em !important;
-  .circle {
-    position: absolute;
-    top: -2.3em;
-    img {
-      display: block;
-      width: 2.5rem;
-      height: auto;
-    }
   }
 }
 
