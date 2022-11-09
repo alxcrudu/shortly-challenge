@@ -83,6 +83,11 @@ select {
   margin-inline: auto;
 }
 
+@media (max-width: 50em) {
+  .container {
+    --padding: 1em;
+  }
+}
 .flex {
   display: flex;
 }
@@ -352,6 +357,7 @@ a {
   display: grid;
   grid-auto-columns: 1fr;
   gap: 1em;
+  text-overflow: ellipsis;
 }
 .form .text-area {
   border-radius: 0.5em;
@@ -429,6 +435,23 @@ a {
   }
   .link-result button {
     margin-left: 1em;
+  }
+}
+@media (max-width: 32em) {
+  .url-shortener-content {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .url-shortener-content form {
+    max-width: 100%;
+  }
+  .url-shortener-content form input {
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+    width: 100%;
+  }
+  .main-heading {
+    font-size: 3rem;
   }
 }
 .copied {
@@ -572,9 +595,12 @@ footer {
 
 .social-links {
   display: flex;
-  gap: 1em;
   font-size: 1.5rem;
   margin: 2em 0;
+}
+
+.social-links > * + * {
+  margin-left: 1em;
 }
 
 @media (min-width: 50em) {

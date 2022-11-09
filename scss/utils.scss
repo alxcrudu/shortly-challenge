@@ -7,6 +7,11 @@
   width: min(var(--max-width), 100% - var(--padding));
   margin-inline: auto;
 }
+@media (max-width: 50em) {
+  .container {
+    --padding: 1em;
+  }
+}
 
 .flex {
   display: flex;
