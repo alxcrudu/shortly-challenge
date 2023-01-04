@@ -5,7 +5,15 @@
   --padding: 2em;
 
   width: min(var(--max-width), 100% - var(--padding));
-  margin-inline: auto;
+  margin-inline: auto auto;
+  // margin left and right for safari
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 50em) {
+  .container {
+    --padding: 1em;
+  }
 }
 
 .flex {

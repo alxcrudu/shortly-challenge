@@ -86,10 +86,13 @@ a {
       border-bottom: 1px solid $grayish-violet;
       display: flex;
       flex-direction: column;
-      gap: 1em;
+      // gap: 1em;
       margin: 0;
       padding: 0 0 2em 0;
       text-align: center;
+    }
+    ul > * + * {
+      margin-top: 1em;
     }
   }
   .user-container {
@@ -153,6 +156,9 @@ a {
     margin-top: 4em;
   }
 }
+.landing-copy {
+  width: 100%;
+}
 
 .center-align {
   align-self: center;
@@ -198,13 +204,15 @@ a {
   display: grid;
   grid-auto-columns: 1fr;
   gap: 1em;
+  text-overflow: ellipsis;
   .text-area {
     border-radius: 0.5em;
     border: 0;
     padding: 1rem 1.5rem;
   }
   .button {
-    border-radius: 0.5em;
+    border-radius: 0.5em !important;
+    min-width: fit-content;
   }
 }
 
@@ -229,6 +237,9 @@ a {
 @media (max-width: 50em) {
   .grey-underlay {
     top: 6em;
+  }
+  .text-area {
+    text-align: center;
   }
 }
 
@@ -282,6 +293,24 @@ a {
   }
 }
 
+@media (max-width: 32em) {
+  .url-shortener-content {
+    padding-left: 1em;
+    padding-right: 1em;
+    form {
+      max-width: 100%;
+      input {
+        padding-left: 0.5em !important;
+        padding-right: 0.5em !important;
+        width: 100%;
+      }
+    }
+  }
+  .main-heading {
+    font-size: 3rem;
+  }
+}
+
 .copied {
   background: $dark-violet !important;
 }
@@ -297,12 +326,32 @@ a {
   border-radius: 100vmax;
   background-color: $dark-violet;
   padding: 1em;
-  width: fit-content;
+  position: absolute;
+  // padding: 0 !important;
+  top: -2.3em;
+  // height: fit-content;
+  // width: fit-content;
 }
 .features {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4em;
+}
+.feature {
+  border-radius: 0.5em;
+  height: min-content;
+  background: #fff;
+  position: relative;
+  padding: 2em 1em 2em 1em !important;
+  .circle {
+    img {
+      display: block;
+      min-width: 40px;
+      min-height: 40px;
+      width: 40px;
+      height: auto;
+    }
+  }
 }
 
 @media (min-width: 60em) {
@@ -330,23 +379,6 @@ a {
     text-align: center;
     flex-direction: column;
     align-items: center;
-  }
-}
-.feature {
-  background: #fff;
-  border-radius: 0.5em;
-  // border: solid 1px red;
-  height: min-content;
-  position: relative;
-  padding: 2em 1em 2em 1em !important;
-  .circle {
-    position: absolute;
-    top: -2.3em;
-    img {
-      display: block;
-      width: 2.5rem;
-      height: auto;
-    }
   }
 }
 
@@ -421,9 +453,12 @@ footer {
 }
 .social-links {
   display: flex;
-  gap: 1em;
+  // gap: 1em;
   font-size: 1.5rem;
   margin: 2em 0;
+}
+.social-links > * + * {
+  margin-left: 1em;
 }
 
 @media (min-width: 50em) {
